@@ -4,4 +4,8 @@ public class Calculator {
 	{
 		return num1+num2;
 	}
+	double area(int radius)
+	{
+		return radius*radius*Math.PI;
+	}
 }
