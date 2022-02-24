@@ -16,19 +16,20 @@ public class Demo {
 		Class.forName("com.myql.cj.jdbc.Driver");
 		
 		Connection con=DriverManager.getConnection(url,user,pass);
-		Statement st=con.createStatement();
+		Statement st=con.prepareStatement(query);
 		
 		ResultSet rs= st.executeQuery(query);
 		System.out.println("uid \t\t name \t\t age");
 		 
-        // Condiion check
-        while (rs.next()) {
-
-            int uid = rs.getInt("uid");
+        // Condition check
+        while (rs.next()) 
+        {
+        	int uid = rs.getInt("uid");
             String name = rs.getString("name");
             String age = rs.getString("age");
             System.out.println(uid + "\t\t" + name + "\t\t" + age);
         }
+        
 		st.close();
 		con.close();
 	}
