@@ -35,8 +35,8 @@ public class Password
 class hashes
 {
 	public static void main(String[] args) {
-		Password p1=new Password("ABC");
-		Password p2=new Password("ABC");
+		Password p1=new Password("Nayna");
+		Password p2=new Password("Nayna");
 		//Compare and print
 		System.out.println("Hash for password 1 : ");
 		System.out.println(p1.hashCode());

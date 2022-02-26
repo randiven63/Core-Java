@@ -13,7 +13,7 @@ public class Demo {
 		String pass="Nayna@123";
 		
 		String query="SELECT * FROM m07.details";
-		Class.forName("com.myql.cj.jdbc.Driver");
+		Class.forName("com.mysql.cj.jdbc.Driver");
 		
 		Connection con=DriverManager.getConnection(url,user,pass);
 		Statement st=con.prepareStatement(query);

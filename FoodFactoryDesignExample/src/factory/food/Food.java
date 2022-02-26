@@ -1,5 +1,5 @@
 package factory.food;
-
+import java.lang.ClassNotFoundException;
 public interface Food 
 {
 	 public String getType();
@@ -20,7 +20,7 @@ class Cake implements Food
 	 }
 }
 
-class FoodFactory 
+class FoodFactory
 {
 		public Food getFood(String order) 
 		{
@@ -36,7 +36,7 @@ class FoodFactory
          
 		}
 		//End of getFood method
-		 public static void main(String[] args) 
+		 public static void main(String[] args) throws Exception
          {
           		FoodFactory ff=new FoodFactory();
              	Food f=ff.getFood("cake");
