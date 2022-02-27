@@ -14,13 +14,14 @@ public class Demo3 {
 		try (Scanner sc = new Scanner(System.in)) {
 			String name=sc.nextLine();
 			int uid = sc.nextInt();
+			String age=sc.next();
 			//String age=sc.next();
 			
 			String url="jdbc:mysql://localhost:3306/m07";
 			String user="root";
 			String pass="Nayna@123";
 			
-			String query="INSERT INTO `m07`.`details` VALUES (?,?);";//this is the query to execute
+			String query="INSERT INTO `m07`.`details` VALUES (?,?,?);";//this is the query to append execute
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con=DriverManager.getConnection(url,user,pass);
@@ -29,6 +30,7 @@ public class Demo3 {
 			PreparedStatement st=con.prepareStatement(query);
 			st.setInt(1, uid);
 			st.setString(2, name);
+			st.setString(3, age);
 			
 			int rs= st.executeUpdate();
 			//rs.next();
